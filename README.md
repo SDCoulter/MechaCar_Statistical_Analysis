@@ -2,6 +2,10 @@
 
 ## Linear Regression to Predict MPG
 
+-- summary
+
+![Linear Regression to Predict MPG](images/01_d1_linear_regression_to_predict_mpg.png)
+
 write a short summary using a screenshot of the output from the linear regression, and address the following questions:
 
 Which variables/coefficients provided a non-random amount of variance to the mpg values in the dataset?
