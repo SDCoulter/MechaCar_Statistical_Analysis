@@ -26,7 +26,7 @@ From the individual p-values shown in the screenshot for each variable (`Pr(>|t|
 
 ***Is the slope of the linear model considered to be zero? Why or why not?***
 
-When dealing with multiple linear regression we set our **null hypothesis** to state: H_0 – the slope of the linear model is zero, or m = 0. With a p-value of `5.35e-11` and a standard significance level of `0.05` we can state there is sufficient evidence to reject the null hypothesis. Meaning the slope of our linear model is **non-zero**.
+When dealing with multiple linear regression we set our **null hypothesis** to state: H<sub>0</sub> – the slope of the linear model is zero, or m = 0. With a p-value of `5.35e-11` and a standard significance level of `0.05` we can state there is sufficient evidence to reject the null hypothesis. Meaning the slope of our linear model is **non-zero**.
 
 ***Does this linear model predict mpg of MechaCar prototypes effectively? Why or why not?***
 
@@ -34,7 +34,7 @@ With an r-squared value of `0.7149` we can say our model is statistically signif
 
 ## Summary Statistics on Suspension Coils
 
-In Deliverable 2 we read in the `Suspension_Coils` dataset, and create a second data frame. We create a total summary of this dataset using the `summarize()` function, chaining the functions with the pipe operator `%>%`. In our summary data frame we want to find out the Mean, Median, Variance and Standard Deviation of the data, so we pass in the corresponding functions, assigning the values to columns of the same names:
+In Deliverable 2 we read in the `Suspension_Coils` dataset and create a second data frame. We create a total summary of this dataset using the `summarize()` function, chaining the functions with the pipe operator `%>%`. In our summary data frame, we want to find out the Mean, Median, Variance and Standard Deviation of the data, so we pass in the corresponding functions, assigning the values to columns of the same names:
 
 ```r
 total_summary <- coils %>% summarize(Mean=mean(PSI), Median=median(PSI), Variance=var(PSI), SD=sd(PSI))
