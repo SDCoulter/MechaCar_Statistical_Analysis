@@ -32,6 +32,34 @@ When dealing with multiple linear regression we set our **null hypothesis** to s
 
 With an r-squared value of `0.7149` we can say our model is statistically significant and predicts the `mpg` 70% of the time. This value falls into a higher-correlation subgroup of r-squared values so we could say the model predicts somewhat strongly. In a real-world setting we would want to decide on an acceptable r-squared value before performing analysis to remove bias. We are not given any boundaries for this value in the assignment so we can only go off our own intuition, which is to say, yes, this model does predict `mpg` fairly effectively, but leaves a lot of room for growth.
 
+## Summary Statistics on Suspension Coils
+
+In Deliverable 2 we read in the `Suspension_Coils` dataset, and create a second data frame. We create a total summary of this dataset using the `summarize()` function, chaining the functions with the pipe operator `%>%`. In our summary data frame we want to find out the Mean, Median, Variance and Standard Deviation of the data, so we pass in the corresponding functions, assigning the values to columns of the same names:
+
+```r
+total_summary <- coils %>% summarize(Mean=mean(PSI), Median=median(PSI), Variance=var(PSI), SD=sd(PSI))
+```
+ Which produces the new `total_summary` data frame:
+
+![Suspension Coils Dataset Total Summary](images/02_d2_total_summary.png)
+
+We also want to view similar summary statistics but grouped into lot numbers. The `Manufacturing_Lot` column of the dataset contains the different categories of Lot - `Lot1`, `Lot2`, and `Lot3`. So we must first group by this column before running the same `summarize()` function.
+
+```r
+lot_summary <- coils %>% group_by(Manufacturing_Lot) %>%
+  summarize(Mean=mean(PSI), Median=median(PSI), Variance=var(PSI), SD=sd(PSI))
+```
+
+Producing the `lot_summary` data frame:
+
+![Suspension Coils Dataset Group By Lot Number Summary](images/03_d2_lot_summary.png)
+
+***The design specifications for the MechaCar suspension coils dictate that the variance of the suspension coils must not exceed 100 pounds per square inch. Does the current manufacturing data meet this design specification for all manufacturing lots in total and each lot individually? Why or why not?***
+
+<!-- resonsing?-->
+
+
+
 ## Context
 
 This is the result of Module 15 of the University of Toronto School of Continuing Studies Data Analysis Bootcamp Course - **Statistics and R** - AutosRUs Automotive Manufacturing Analysis with R. Following the guidance of the module we end up pushing this selection of files to GitHub.
