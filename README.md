@@ -43,7 +43,7 @@ total_summary <- coils %>% summarize(Mean=mean(PSI), Median=median(PSI), Varianc
 
 ![Suspension Coils Dataset Total Summary](images/02_d2_total_summary.png)
 
-We also want to view similar summary statistics but grouped into lot numbers. The `Manufacturing_Lot` column of the dataset contains the different categories of Lot - `Lot1`, `Lot2`, and `Lot3`. So we must first group by this column before running the same `summarize()` function.
+We also want to view similar summary statistics but grouped into lot numbers. The `Manufacturing_Lot` column of the dataset contains the different categories of Lot - `Lot1`, `Lot2`, and `Lot3`. So, we must first group by this column before running the same `summarize()` function.
 
 ```r
 lot_summary <- coils %>% group_by(Manufacturing_Lot) %>%
@@ -52,12 +52,11 @@ lot_summary <- coils %>% group_by(Manufacturing_Lot) %>%
 
 Producing the `lot_summary` data frame:
 
-![Suspension Coils Dataset Group By Lot Number Summary](images/03_d2_lot_summary.png)
+![Suspension Coils Dataset Group by Lot Number Summary](images/03_d2_lot_summary.png)
 
 ***The design specifications for the MechaCar suspension coils dictate that the variance of the suspension coils must not exceed 100 pounds per square inch. Does the current manufacturing data meet this design specification for all manufacturing lots in total and each lot individually? Why or why not?***
 
-<!-- resonsing?-->
-
+From the `total_summary` data frame we can see that with all the suspension coils combined, the variance falls in the limits of the design specification. However, when separating the coils and grouping them into their `Manufacturing_Lot`'s we see that `Lot3` does not. `Lot1` and `Lot2`, have good variance values, easily within the design specification, `0.9795918` and `7.4693878` respectively. `Lot3` though has a variance of `170.2861224` which is far from the design specification, meaning this lot exceeds 100 pounds per square inch in variance.
 
 
 ## Context
