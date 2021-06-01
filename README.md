@@ -60,14 +60,34 @@ From the `total_summary` data frame we can see that with **all the suspension co
 
 ## T-Tests on Suspension Coils
 
+In Deliverable 3 we continue our analysis on the `Suspension_Coils` dataset, by performing Student's t-tests on the PSI column. First, we remind ourselves of the hypotheses being tested by this analysis:
+
+- H<sub>0</sub> - there is **no statistical difference** between the observed sample mean and its presumed population mean.
+- H<sub>a</sub> – there is **a statistical difference** between the observed sample mean and its presumed population mean.
+
+ Then we use the `t.test()` function on the whole dataset (the full PSI column), passing in the population mean, mu, as `1500` (given in the challenge).
+
+```r
+t.test(coils$PSI, mu = 1500)
+```
+
+Which produces our t-test console output:
+
+![T-Test on all Coils (PSI)](images/04_d3_test_total.png)
+
+Here we can see our p-value is
 
 
-![T-Test On All Coils (PSI)](images/04_d3_test_total.png)
 
 
+
+![T-Test on Coils Subset by Manufacturing_Lot](images/05_d3_test_lots.png)
 
 <!--
 Using your knowledge of R, perform t-tests to determine if all manufacturing lots and each lot individually are statistically different from the population mean of 1,500 pounds per square inch.-->
+
+In your README, create a subheading ## T-Tests on Suspension Coils, then briefly summarize your interpretation and findings for the t-test results. Include screenshots of the t-test to support your summary.
+
 
 ## Context
 
