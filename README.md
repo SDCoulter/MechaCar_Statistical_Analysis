@@ -91,9 +91,32 @@ We run each test and produce an output for each one in the console:
 
 Each test produces a p-value that we can interpret and reject or fail to reject the null hypothesis with.
 
-- `Lot1` has a p-value of `1` - this means that the observed mean of the subset and the population mean are identical. We of course cannot reject the null hypothesis, there is **no statistically significant difference** between the sample mean and population mean. *Both are 1500.*
+- `Lot1` has a p-value of `1` - this means that the observed mean of the subset and the population mean are identical. We of course cannot reject the null hypothesis, there is **no statistically significant difference** between the sample mean and population mean - *both are 1500.*
 - `Lot2` has a p-value of `0.6072` - again we see a p-value above our `0.05` significance level. We follow on from the previous determinations in not rejecting the null hypothesis and saying there is **no statistically significant difference** between the sample mean and population mean.
 - `Lot3` has a p-value of `0.04168` - here we see a p-value below the `0.05` significance level, so unlike the other two `Lot`'s we ***do*** reject the null hypothesis. This means there **is a statistically significant difference** between the sample mean and the population mean. We expect this already from the analyses performed in Deliverable 1 and 2, however it is always good to compare fully and perform rigorous testing before making claims about data.
+
+## Study Design: MechaCar vs Competition
+
+For this analysis we want to compare some of the most important factors in buying a car, the safety, the type/class, and the fuel efficiency. We want to ask the question: **Is there any statistical difference in the fuel efficiency of a vehicle based on safety rating and vehicle class?**
+
+**What metric or metrics are you going to test?**
+We are going to test the safety rating and vehicle class metrics to see if and how they statistically affect the fuel efficiency of a vehicle. The dependent variable is the fuel efficiency, which is numerical and continuous. The independent variables are the safety rating and the vehicle class, which are categorical. (*We assume the dependent variable is normally distributed, and the variance among each categorical group should be similar.*)
+
+**What is the null hypothesis or alternative hypothesis?**
+We set up our hypotheses to be:
+
+- H<sub>0</sub> - the means of all the groups are equal - μ1 = μ2 = … = μn.
+-	H<sub>a</sub> – at least one of the means is different from all other groups.
+
+Meaning we are comparing the means of the independent variable's fuel efficiency values, where they are grouped by vehicle class and safety ratings. If we reject the null hypothesis we are saying that at least one of these groups has a different mean, we would be saying there is a significant difference in the mean fuel efficiency in at least one of these groups.
+
+**What statistical test would you use to test the hypothesis? And why?**
+With a numerical, continuous dependent variable, and two categorical independent variables we would choose to do a two-way ANOVA test. This test asks the questions, is there a statistical difference between the distribution means from multiple samples? We choose this test simply because the data types make it the prime choice to learn more about the dependent variable.
+
+**What data is needed to run the statistical test?**
+To run this test we would need information about vehicle classes, safety ratings, and the known fuel efficiencies. We would be fools to think we could gather anywhere close to the a whole population of data on vehicles, given the sheer number of them. This means we look at taking a sample (as fairly as we can) that contains this data. We would then likely need to clean and sort it, pulling out the relevant information and removing any nonsensical data, before running our analysis.
+
+We would also need to inspect the classes and safety ratings to make sure the groupings and the data are distributed fairly. Since these are categorical variables we would want to make sure they're standardized so they all fall into expected groups, and that there's a similar number of each of them.
 
 ## Context
 
