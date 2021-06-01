@@ -56,8 +56,18 @@ Producing the `lot_summary` data frame:
 
 ***The design specifications for the MechaCar suspension coils dictate that the variance of the suspension coils must not exceed 100 pounds per square inch. Does the current manufacturing data meet this design specification for all manufacturing lots in total and each lot individually? Why or why not?***
 
-From the `total_summary` data frame we can see that with all the suspension coils combined, the variance falls in the limits of the design specification. However, when separating the coils and grouping them into their `Manufacturing_Lot`'s we see that `Lot3` does not. `Lot1` and `Lot2`, have good variance values, easily within the design specification, `0.9795918` and `7.4693878` respectively. `Lot3` though has a variance of `170.2861224` which is far from the design specification, meaning this lot exceeds 100 pounds per square inch in variance.
+From the `total_summary` data frame we can see that with **all the suspension coils combined, the variance falls in the limits of the design specification** - `62.29356` being less than the required `100`. However, when separating the coils and grouping them into their `Manufacturing_Lot`'s we see that `Lot3` does not. `Lot1` and `Lot2`, have good variance values, easily within the design specification, `0.9795918` and `7.4693878` respectively. `Lot3` though has a variance of `170.2861224` which is far from the design specification, meaning `Lot3` **exceeds 100 pounds per square inch in variance**.
 
+## T-Tests on Suspension Coils
+
+
+
+![T-Test On All Coils (PSI)](images/04_d3_test_total.png)
+
+
+
+<!--
+Using your knowledge of R, perform t-tests to determine if all manufacturing lots and each lot individually are statistically different from the population mean of 1,500 pounds per square inch.-->
 
 ## Context
 

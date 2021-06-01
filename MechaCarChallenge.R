@@ -25,3 +25,15 @@ total_summary <- coils %>% summarize(Mean=mean(PSI), Median=median(PSI), Varianc
 # Create summary data frame grouped by Manufacturing_Lot column.
 lot_summary <- coils %>% group_by(Manufacturing_Lot) %>%
   summarize(Mean=mean(PSI), Median=median(PSI), Variance=var(PSI), SD=sd(PSI))
+
+
+
+### -- DELIVERABLE 3 - T-Tests on Suspension Coils -- ###
+
+# t-test to compare full sample mean to population mean of 1500.
+t.test(coils$PSI, mu = 1500)
+
+# 3 t-test - 1 for each Manufacturing Lot.
+t.test(subset(coils, Manufacturing_Lot == 'Lot1')$PSI, mu = 1500)
+t.test(subset(coils, Manufacturing_Lot == 'Lot2')$PSI, mu = 1500)
+t.test(subset(coils, Manufacturing_Lot == 'Lot3')$PSI, mu = 1500)
