@@ -75,19 +75,25 @@ Which produces our t-test console output:
 
 ![T-Test on all Coils (PSI)](images/04_d3_test_total.png)
 
-Here we can see our p-value is
+Here we can see our p-value is `0.06028` which is above our standard `0.05` significance level. This means we do not reject the null hypothesis - the evidence shows there is **no statistically significant difference** between the observed sample mean and the population mean. *Even though the p-value is close to our significance level we still cannot reject the null hypothesis, and we must say there is no statistical difference between the observed sample mean and the population mean.*
 
+We perform similar t-tests on the PSI column, but this time grouping by `Manufacturing_Lot`. We do this by creating subsets of the dataset with the `subset()` function, and only pass PSI values in that meet the `Lot` criteria.
 
+```r
+t.test(subset(coils, Manufacturing_Lot == 'Lot1')$PSI, mu = 1500)
+t.test(subset(coils, Manufacturing_Lot == 'Lot2')$PSI, mu = 1500)
+t.test(subset(coils, Manufacturing_Lot == 'Lot3')$PSI, mu = 1500)
+```
 
-
+We run each test and produce an output for each one in the console:
 
 ![T-Test on Coils Subset by Manufacturing_Lot](images/05_d3_test_lots.png)
 
-<!--
-Using your knowledge of R, perform t-tests to determine if all manufacturing lots and each lot individually are statistically different from the population mean of 1,500 pounds per square inch.-->
+Each test produces a p-value that we can interpret and reject or fail to reject the null hypothesis with.
 
-In your README, create a subheading ## T-Tests on Suspension Coils, then briefly summarize your interpretation and findings for the t-test results. Include screenshots of the t-test to support your summary.
-
+- `Lot1` has a p-value of `1` - this means that the observed mean of the subset and the population mean are identical. We of course cannot reject the null hypothesis, there is **no statistically significant difference** between the sample mean and population mean. *Both are 1500.*
+- `Lot2` has a p-value of `0.6072` - again we see a p-value above our `0.05` significance level. We follow on from the previous determinations in not rejecting the null hypothesis and saying there is **no statistically significant difference** between the sample mean and population mean.
+- `Lot3` has a p-value of `0.04168` - here we see a p-value below the `0.05` significance level, so unlike the other two `Lot`'s we ***do*** reject the null hypothesis. This means there **is a statistically significant difference** between the sample mean and the population mean. We expect this already from the analyses performed in Deliverable 1 and 2, however it is always good to compare fully and perform rigorous testing before making claims about data.
 
 ## Context
 
