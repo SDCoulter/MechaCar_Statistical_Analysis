@@ -97,7 +97,7 @@ Each test produces a p-value that we can interpret and reject or fail to reject 
 
 ## Study Design: MechaCar vs Competition
 
-For this analysis we want to compare some of the most important factors in buying a car, the safety, the type/class, and the fuel efficiency. We want to ask the question: **Is there any statistical difference in the fuel efficiency of a vehicle based on safety rating and vehicle class?**
+In Deliverable 4 we design our own analysis to compare some of the most important factors in buying a car, the safety, the type/class, and the fuel efficiency. We want to ask the question: **Is there any statistical difference in the fuel efficiency of a vehicle based on safety rating and vehicle class?**
 
 **What metric or metrics are you going to test?**
 We are going to test the safety rating and vehicle class metrics to see if and how they statistically affect the fuel efficiency of a vehicle. The dependent variable is the fuel efficiency, which is numerical and continuous. The independent variables are the safety rating and the vehicle class, which are categorical. (*We assume the dependent variable is normally distributed, and the variance among each categorical group should be similar.*)
